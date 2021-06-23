@@ -1,4 +1,5 @@
 ﻿using ByteBank.Funcionarios;
+using ByteBankInterfaceHeranca.Funcionarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,25 @@ namespace ByteBankInterfaceHeranca
     {
         static void Main(string[] args)
         {
-            Funcionario carlos = new Funcionario(1);
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+            Funcionario carlos = new Funcionario();
             carlos.Nome = "Carlos Almeida";
-            carlos.CPF = "123-456-789-10";
+            carlos.CPF = "123.456.789-10";
             carlos.Salario = 2000;
+            gerenciadorBonificacao.Registrar(carlos);
+
+            Diretor rafaela = new Diretor();
+            rafaela.Nome = "Rafaela Cerqueira";
+            rafaela.CPF = "546.879.157-20";
+            rafaela.Salario = 5000;
+            gerenciadorBonificacao.Registrar(rafaela);
 
             Console.WriteLine(carlos.Nome);
             Console.WriteLine(carlos.GetBonificacao());
+
+            Console.WriteLine(rafaela.Nome);
+            Console.WriteLine(rafaela.GetBonificacao());
+            Console.WriteLine("Total de bonificações" + gerenciadorBonificacao.GetTotalBonificacao());
 
             Console.ReadLine();
         }
