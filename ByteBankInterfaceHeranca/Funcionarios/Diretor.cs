@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 namespace ByteBankInterfaceHeranca.Funcionarios
 {
     class Diretor : Funcionario
-    { 
+    {
+        public Diretor(string cpf) : base(cpf)
+        {
+            Console.WriteLine("CRIANDO UM DIRETOR");
+        }
         //Sobrepondo comportamento do funcionário
         public override double GetBonificacao()
         {
