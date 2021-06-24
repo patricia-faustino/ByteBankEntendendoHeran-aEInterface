@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    //classe abstrata que não pode ser instanciada, servindo de base para suas filhas
+    public abstract class Funcionario
     {
         public static int TotalDeFuncionarios { get; private set; }
         public string Nome { get; set; }
@@ -18,7 +19,6 @@ namespace ByteBank.Funcionarios
         {
             CPF = cpf;
             Salario = salario; 
-            Console.WriteLine("CRIANDO UM FUNCIONARIO");
             TotalDeFuncionarios++;
         }
         public virtual void AumentarSalario()

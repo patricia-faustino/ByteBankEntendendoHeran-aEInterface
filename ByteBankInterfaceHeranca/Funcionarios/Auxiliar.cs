@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 
 namespace ByteBankInterfaceHeranca.Funcionarios
 {
-    // classe concreta que pode ser instanciada
-    class Diretor : Funcionario
+    class Auxiliar : Funcionario
     {
-        public Diretor(string cpf) : base(5000, cpf)
+        public Auxiliar(string cpf) : base(2000, cpf)
         {
-        }
 
+        }
         public override void AumentarSalario()
         {
-            Salario *= 1.15;
+            Salario *= 1.11;
         }
         //Sobrepondo comportamento do funcionário
         public override double GetBonificacao()
         {
             //chamar método, propriedade da classe mãe 'base'
-            return Salario * 0.5; 
+            return Salario * 0.20;
         }
     }
 }
