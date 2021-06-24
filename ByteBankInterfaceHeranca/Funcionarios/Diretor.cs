@@ -9,8 +9,8 @@ namespace ByteBankInterfaceHeranca.Funcionarios
 {
     class Diretor : Funcionario
     { 
-
-        public double GetBonificacao()
+        //Sobrepondo comportamento do funcionário
+        public override double GetBonificacao()
         {
             return Salario; 
         }

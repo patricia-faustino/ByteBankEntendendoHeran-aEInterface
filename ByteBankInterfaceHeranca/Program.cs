@@ -28,6 +28,11 @@ namespace ByteBankInterfaceHeranca
             rafaela.Salario = 5000;
             gerenciadorBonificacao.Registrar(rafaela);
 
+            Funcionario rafaelaTeste = rafaela;
+
+            Console.WriteLine("Bonificação de uma referência de Diretor: " + rafaela.GetBonificacao());
+            Console.WriteLine("Bonificação de uma referência de Funcionario: " + rafaelaTeste.GetBonificacao());
+
             Console.WriteLine(carlos.Nome);
             Console.WriteLine(carlos.GetBonificacao());
 
