@@ -13,9 +13,9 @@ namespace ByteBank.Funcionarios
 
         public double Salario { get; set; }
 
-        /// <summary>
-        /// A classe filha pode mudar o comportamento
-        /// </summary>
+
+        // A classe filha pode mudar o comportamento
+
         public virtual double GetBonificacao()
         {
             return Salario * 0.10;

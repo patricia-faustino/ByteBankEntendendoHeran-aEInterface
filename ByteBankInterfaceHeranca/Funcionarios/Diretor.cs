@@ -12,7 +12,8 @@ namespace ByteBankInterfaceHeranca.Funcionarios
         //Sobrepondo comportamento do funcionário
         public override double GetBonificacao()
         {
-            return Salario; 
+            //chamar método, propriedade da classe mãe 'base'
+            return Salario + base.GetBonificacao(); 
         }
     }
 }

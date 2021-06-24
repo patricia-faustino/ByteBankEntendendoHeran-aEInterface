@@ -28,6 +28,7 @@ namespace ByteBankInterfaceHeranca
             rafaela.Salario = 5000;
             gerenciadorBonificacao.Registrar(rafaela);
 
+            //Polimorfismo
             Funcionario rafaelaTeste = rafaela;
 
             Console.WriteLine("Bonificação de uma referência de Diretor: " + rafaela.GetBonificacao());
