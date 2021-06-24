@@ -16,12 +16,6 @@ namespace ByteBankInterfaceHeranca
             _totalBonificacao += funcionario.GetBonificacao();
         }
 
-        //Método com sobrecargas diferentes
-        public void Registrar(Diretor diretor)
-        {
-            _totalBonificacao += diretor.GetBonificacao();
-        }
-
         public double GetTotalBonificacao()
         {
             return _totalBonificacao;

@@ -13,6 +13,9 @@ namespace ByteBankInterfaceHeranca
         static void Main(string[] args)
         {
             GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Funcionario pedro = new Diretor();
+
             Funcionario carlos = new Funcionario();
             carlos.Nome = "Carlos Almeida";
             carlos.CPF = "123.456.789-10";
@@ -30,7 +33,7 @@ namespace ByteBankInterfaceHeranca
 
             Console.WriteLine(rafaela.Nome);
             Console.WriteLine(rafaela.GetBonificacao());
-            Console.WriteLine("Total de bonificações" + gerenciadorBonificacao.GetTotalBonificacao());
+            Console.WriteLine("Total de bonificações R$" + gerenciadorBonificacao.GetTotalBonificacao());
 
             Console.ReadLine();
         }
