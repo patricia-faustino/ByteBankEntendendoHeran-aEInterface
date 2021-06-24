@@ -9,9 +9,14 @@ namespace ByteBankInterfaceHeranca.Funcionarios
 {
     class Diretor : Funcionario
     {
-        public Diretor(string cpf) : base(cpf)
+        public Diretor(double salario, string cpf) : base(5000, cpf)
         {
             Console.WriteLine("CRIANDO UM DIRETOR");
+        }
+
+        public override void AumentarSalario()
+        {
+            Salario *= 1.15;
         }
         //Sobrepondo comportamento do funcionário
         public override double GetBonificacao()

@@ -14,16 +14,21 @@ namespace ByteBankInterfaceHeranca
         {
             GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
 
-            Funcionario carlos = new Funcionario("123.456.789-10");
+            Funcionario carlos = new Funcionario(2000, "123.456.789-10");
             carlos.Nome = "Carlos Almeida";
-            carlos.Salario = 2000;
+      
+
+            carlos.AumentarSalario();
+            Console.WriteLine("Novo salário do Carlos: R$" + carlos.Salario);
             gerenciadorBonificacao.Registrar(carlos);
 
             Console.WriteLine(Funcionario.TotalDeFuncionarios);
 
-            Diretor rafaela = new Diretor("546.879.157-20");
+            Diretor rafaela = new Diretor(5000, "546.879.157-20");
             rafaela.Nome = "Rafaela Cerqueira";
-            rafaela.Salario = 5000;
+
+            rafaela.AumentarSalario();
+            Console.WriteLine("Novo salário do Rafaela: R$" + rafaela.Salario);
             gerenciadorBonificacao.Registrar(rafaela);
 
             Console.WriteLine(Funcionario.TotalDeFuncionarios);
