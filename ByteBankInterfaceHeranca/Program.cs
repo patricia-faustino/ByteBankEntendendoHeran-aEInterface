@@ -21,16 +21,19 @@ namespace ByteBankInterfaceHeranca
             
             GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao( );
 
-            Funcionario pedro = new Designer("833.222.048-39");
+            Desenvolvedor guilherme = new Desenvolvedor("123.456.789-20");
+            guilherme.Nome = "Guilherme";
+
+            Designer pedro = new Designer("833.222.048-39");
             pedro.Nome = "Pedro Costa";
 
-            Funcionario rafaela = new Diretor("159.753.398-04");
+            Diretor rafaela = new Diretor("159.753.398-04");
             rafaela.Nome = "Rafaela Almeida";
 
-            Funcionario igor = new Auxiliar("981.198.778-53");
+            Auxiliar igor = new Auxiliar("981.198.778-53");
             igor.Nome = "Igor Ferreira";
 
-            Funcionario camila = new GerenteDeConta("326.985.628-89");
+            GerenteDeConta camila = new GerenteDeConta("326.985.628-89");
             camila.Nome = "Camila Silva";
 
             gerenciadorBonificacao.Registrar(pedro);

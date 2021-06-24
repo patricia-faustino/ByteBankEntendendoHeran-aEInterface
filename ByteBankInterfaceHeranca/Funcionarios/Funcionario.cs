@@ -21,15 +21,11 @@ namespace ByteBank.Funcionarios
             Salario = salario; 
             TotalDeFuncionarios++;
         }
-        public virtual void AumentarSalario()
-        {
-            Salario *= 1.1;
-        }
+        //Métodos abstratos não possuem corpo, servem para o desenvolvedor lembrar de 
+        // criar essa classe
+        public abstract void AumentarSalario();
 
         // A classe filha pode mudar o comportamento
-        public virtual double GetBonificacao()
-        {
-            return Salario * 0.10;
-        }
+        public abstract double GetBonificacao();
     }
 }
