@@ -1,4 +1,5 @@
 ﻿using ByteBank.Funcionarios;
+using ByteBankInterfaceHeranca.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,12 @@ using System.Threading.Tasks;
 namespace ByteBankInterfaceHeranca.Funcionarios
 {
     // classe concreta que pode ser instanciada
-    class Diretor : Funcionario
+    class Diretor : Autenticavel
     {
         public Diretor(string cpf) : base(5000, cpf)
         {
         }
+
 
         public override void AumentarSalario()
         {

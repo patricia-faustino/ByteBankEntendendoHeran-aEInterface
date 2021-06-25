@@ -21,6 +21,13 @@ namespace ByteBank.Funcionarios
             Salario = salario; 
             TotalDeFuncionarios++;
         }
+
+        // o this informa qual construtor estamos usando
+        public Funcionario (string cpf) : this(1500, cpf)
+        {
+
+        }
+
         //Métodos abstratos não possuem corpo, servem para o desenvolvedor lembrar de 
         // criar essa classe
         public abstract void AumentarSalario();

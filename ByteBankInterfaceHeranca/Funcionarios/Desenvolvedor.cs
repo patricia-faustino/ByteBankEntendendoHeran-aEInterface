@@ -22,5 +22,5 @@ namespace ByteBankInterfaceHeranca.Funcionarios
             return Salario * 0.01;
         }
     }
-    }
+    
 }
