@@ -10,7 +10,7 @@ namespace ByteBankInterfaceHeranca.Sistemas
 {
     class SistemaInterno
     {
-        public bool Logar(Autenticavel funcionario, string senha)
+        public bool Logar(IAutenticavel funcionario, string senha)
         {
             bool usarioAutenticado = funcionario.Autenticar(senha);
 

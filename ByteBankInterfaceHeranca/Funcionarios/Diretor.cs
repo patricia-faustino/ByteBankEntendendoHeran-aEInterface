@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ByteBankInterfaceHeranca.Funcionarios
 {
     // classe concreta que pode ser instanciada
-    class Diretor : Autenticavel
+    class Diretor : FuncionarioAutenticavel
     {
         public Diretor(string cpf) : base(5000, cpf)
         {
@@ -20,11 +20,16 @@ namespace ByteBankInterfaceHeranca.Funcionarios
         {
             Salario *= 1.15;
         }
+
+
+
         //Sobrepondo comportamento do funcionário
         public override double GetBonificacao()
         {
             //chamar método, propriedade da classe mãe 'base'
             return Salario * 0.5; 
         }
+
+
     }
 }
