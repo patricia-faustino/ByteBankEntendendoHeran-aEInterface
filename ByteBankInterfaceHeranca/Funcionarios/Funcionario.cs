@@ -6,17 +6,33 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    //classe abstrata que não pode ser instanciada, servindo de base para suas filhas
+    public abstract class Funcionario
     {
+        public static int TotalDeFuncionarios { get; private set; }
         public string Nome { get; set; }
-        public string CPF { get; set; }
+        public string CPF { get; private set; }
 
-        public double Salario { get; set; }
+        public double Salario { get; protected set; }
 
-
-        public double GetBonificacao()
+        public Funcionario(double salario, string cpf)
         {
-            return Salario * 0.10;
+            CPF = cpf;
+            Salario = salario; 
+            TotalDeFuncionarios++;
         }
+
+        // o this informa qual construtor estamos usando
+        public Funcionario (string cpf) : this(1500, cpf)
+        {
+
+        }
+
+        //Métodos abstratos não possuem corpo, servem para o desenvolvedor lembrar de 
+        // criar essa classe
+        public abstract void AumentarSalario();
+
+        // A classe filha pode mudar o comportamento
+        public abstract double GetBonificacao();
     }
 }

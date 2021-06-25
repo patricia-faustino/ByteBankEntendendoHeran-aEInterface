@@ -1,5 +1,6 @@
 ﻿using ByteBank.Funcionarios;
 using ByteBankInterfaceHeranca.Funcionarios;
+using ByteBankInterfaceHeranca.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,27 +13,57 @@ namespace ByteBankInterfaceHeranca
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
-            Funcionario carlos = new Funcionario();
-            carlos.Nome = "Carlos Almeida";
-            carlos.CPF = "123.456.789-10";
-            carlos.Salario = 2000;
-            gerenciadorBonificacao.Registrar(carlos);
-
-            Diretor rafaela = new Diretor();
-            rafaela.Nome = "Rafaela Cerqueira";
-            rafaela.CPF = "546.879.157-20";
-            rafaela.Salario = 5000;
-            gerenciadorBonificacao.Registrar(rafaela);
-
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
-
-            Console.WriteLine(rafaela.Nome);
-            Console.WriteLine(rafaela.GetBonificacao());
-            Console.WriteLine("Total de bonificações" + gerenciadorBonificacao.GetTotalBonificacao());
-
+            //CalcularBonificacao();
+            UsarSistema();
             Console.ReadLine();
+
+
+        }
+
+        public static void UsarSistema()
+        {
+            SistemaInterno sistemaInterno = new SistemaInterno();
+
+            Diretor roberta = new Diretor("159.753.398-04");
+            roberta.Nome = "Roberta";
+            roberta.Senha = "123";
+
+            GerenteDeConta camila = new GerenteDeConta("326.985.628-89");
+            camila.Nome = "Camila Silva";
+            camila.Senha = "abc";
+
+            ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Senha = "123456";
+
+            sistemaInterno.Logar(parceiro, "123456");
+            sistemaInterno.Logar(roberta, "123");
+            sistemaInterno.Logar(camila, "abc");
+        }
+        public static void CalcularBonificacao() { 
+            
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao( );
+
+            Desenvolvedor guilherme = new Desenvolvedor("123.456.789-20");
+            guilherme.Nome = "Guilherme";
+
+            Designer pedro = new Designer("833.222.048-39");
+            pedro.Nome = "Pedro Costa";
+
+            Diretor rafaela = new Diretor("159.753.398-04");
+            rafaela.Nome = "Rafaela Almeida";
+
+            Auxiliar igor = new Auxiliar("981.198.778-53");
+            igor.Nome = "Igor Ferreira";
+
+            GerenteDeConta camila = new GerenteDeConta("326.985.628-89");
+            camila.Nome = "Camila Silva";
+
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(rafaela);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
+
+            Console.WriteLine("Total de bonificações do mês R$" + gerenciadorBonificacao.GetTotalBonificacao());
         }
     }
 }
